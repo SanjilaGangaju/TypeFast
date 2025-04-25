@@ -14,12 +14,18 @@ let testPara = document.querySelector(".para");
 let randomPara = Math.floor(Math.random() * paragraphs.length);
 testPara.innerText = paragraphs[randomPara];
 let userPara=document.querySelector("#user-text");
-timerStarted=false;//flag to check if typing has already begun
+let timerStarted=false;//flag to check if typing has already begun
 userPara.addEventListener("keydown",()=>{
   
   if (!timerStarted){
     timerStarted=true;
-    console.log("timerstarted");
-  }
+    let startTime= Date.now();
+    const timerInterval=setInterval(()=>{
+      const elapsedTime = (Date.now())-startTime;
+    console.log('Elapsed Time: '+ elapsedTime + 'ms');
+    },2000);
+  console.log("timerstarted");
+  
+}
 }
 );
