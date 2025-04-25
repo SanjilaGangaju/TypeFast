@@ -13,3 +13,13 @@ let paragraphs = [
 let testPara = document.querySelector(".para");
 let randomPara = Math.floor(Math.random() * paragraphs.length);
 testPara.innerText = paragraphs[randomPara];
+let userPara=document.querySelector("#user-text");
+timerStarted=false;//flag to check if typing has already begun
+userPara.addEventListener("keydown",()=>{
+  
+  if (!timerStarted){
+    timerStarted=true;
+    console.log("timerstarted");
+  }
+}
+);
